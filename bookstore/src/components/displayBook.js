@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DisplayBooks = ({ bookList }) => {
+const DisplayBooks = ({bookList}) => {
     return (
     <ul>
         { bookList.map(book => <li key={book.id}>
