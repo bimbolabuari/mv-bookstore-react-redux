@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const CreateNewBook = (props) => {
     return (
@@ -18,4 +19,10 @@ const CreateNewBook = (props) => {
     </div>
     )
 };
+
+CreateNewBook.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string
+  };
+
 export default CreateNewBook;
