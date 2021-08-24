@@ -20,7 +20,7 @@ constructor(props) {
         const bookArray = this.state.books
         return (
             <div>
-            < DisplayBooks bookList={bookArray}/>
+            <DisplayBooks bookList={bookArray}/>
             <CreateNewBook id="categories" name="categories" selected={true} />
             </div>
             )
