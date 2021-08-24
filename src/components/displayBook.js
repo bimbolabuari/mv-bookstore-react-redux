@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const DisplayBooks = ({bookList}) => {
     return (
@@ -25,4 +26,8 @@ const DisplayBooks = ({bookList}) => {
     </ul>
     )
 };
+
+DisplayBooks.propTypes = {
+    bookList: PropTypes.array
+  };
 export default DisplayBooks;
