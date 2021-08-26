@@ -1,30 +1,22 @@
 import React from 'react';
-import CreateNewBook from './createNewBook';
-import DisplayBooks from './displayBook';
+import CreateNewBook from '../components/createNewBook';
+import DisplayBooks from '../container/displayBook';
 import { v4 as uuidv4 } from 'uuid';
+import store from '../redux/cofigureStore';
+import { books } from '../redux/books/bookReducer';
+// import { useDispatch } from 'react-redux'
 
-class Books extends React.Component {
+const Books = () => {
 
-constructor(props) {
-    super(props);
-    this.state = {
-    books: [
-      {type: 'Science fiction', title: 'Book One', author: "author", id: uuidv4()},
-      {type: 'Economy', title: 'Book Two', author: "author", id: uuidv4()},
-      {type: 'Documentation', title: 'Book Three', author: "author", id: uuidv4()}
-    ]
-  }
-  }
-
-    render () {
-        const bookArray = this.state.books
+   
+  
+      
         return (
-            <div>
-            <DisplayBooks bookList={bookArray}/>
+            <>
+            <DisplayBooks/>
             <CreateNewBook id="categories" name="categories" selected={true} />
-            </div>
+            </>
             )
-    }
 
 };
 export default Books;
