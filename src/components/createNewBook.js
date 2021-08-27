@@ -7,7 +7,7 @@ import { addBook } from '../actions/bookActionCreator';
     const CreateNewBook = ({addBook}) => {
       const [title, setTitle] = useState('');
       const [author, setAuthor] = useState('');
-      const [genre, setGenre] = useState('Science Fiction');
+      const [category, setcategory] = useState('Science Fiction');
     
     
       const handleTitleChange = (event) => {
@@ -18,13 +18,13 @@ import { addBook } from '../actions/bookActionCreator';
       }
 
       const handleTypeChange = (event) => {
-        setGenre(event.target.value)
+        setcategory(event.target.value)
       }
 
       
       const handleSubmit = (event) => {
         event.preventDefault()
-        addBook({title, author, genre})
+        addBook({title, author, category})
         return false
       }
         return (
