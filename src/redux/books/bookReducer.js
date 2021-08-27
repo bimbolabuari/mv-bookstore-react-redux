@@ -1,21 +1,47 @@
 import * as actions from '../../actions/bookAction';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
+// BIaRoNTXarfAkaRwuuR5
 
-export const initialBooks = [
-  {type: 'Science fiction', title: 'Book One', author: "author", id: uuidv4()},
-  {type: 'Economy', title: 'Book Two', author: "author", id: uuidv4()},
-  {type: 'Documentation', title: 'Book Three', author: "author", id: uuidv4()}
-]
+export const initialBooks = []
+
+const APIUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BIaRoNTXarfAkaRwuuR5/books';
 
 const books =  (state = initialBooks, action) => {
+  const {id, title, category} = action
       switch (action.type) {
         case actions.BOOK_ADDED:
-          const {id, title, author, genre} = action
-          return [
-            ...state, {id, title, author, genre}
-          ];
+          fetch(APIUrl, {
+            cash: 'reload',
+            method: 'POST',
+            body: JSON.stringify({
+              item_id: id,
+              title: title,
+              category: category
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }).then(() => {
+            window.location.reload();
+          });
+          return state;
       case actions.BOOK_REMOVED:
-        return state.filter(book => book.id !== action.id);
+        fetch(`'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BIaRoNTXarfAkaRwuuR5/books/${id}'`, {
+          method: 'DELETE',
+          body: JSON.stringify({
+            item_id: id,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          return state.filter(book => book.id !== action.id);
+        case actions.BOOK_GOTTEN:
+          return Object.keys(action.payload).map((key) => ({
+            id: key,
+            title: action.payload[key][0].title,
+            category: action.payload[key][0].category,
+          }));
       default: return state;
     }
 };
