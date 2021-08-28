@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div>
-            <h1>BOOKSTORE CMS</h1>
+        <div className="header">
+          <div className="header-container flex">
+            <h1 className="title">BOOKSTORE CMS</h1>
             <nav>
-            <ul>
+            <ul className="nav flex">
               <li>
                 <Link className="link" to="/books">Books</Link>
               </li>
@@ -16,6 +17,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
+          </div>
         </div>
     )
 }

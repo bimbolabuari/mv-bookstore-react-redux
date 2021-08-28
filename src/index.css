@@ -2,4 +2,173 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Arial Narrow Bold", sans-serif;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 5.5rem;
+  background: #fff;
+}
+
+.header-container {
+  width: 50%;
+  margin: 0 20px;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  color: #0290ff;
+  font-size: 1.875rem;
+}
+
+.nav {
+  width: 60%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.progressBar {
+  width: 80%;
+}
+
+.link {
+  margin: 0 10px;
+  color: rgb(88, 87, 87);
+}
+
+.booklist-container {
+  padding: 2.3em 5.5em 5.5em;
+  background: #f5f6fa;
+}
+
+.booklist {
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 3em 1em 1em;
+  margin: 2rem 0;
+  background: #fff;
+}
+
+.form {
+  justify-content: space-between;
+}
+
+.circle {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border-top: 4px solid #379cf6;
+  border-right: 4px solid #379cf6;
+  border-bottom: 4px solid #379cf6;
+  border-left: 4px solid #e8e8e8;
+  rotate: 45deg;
+  margin-right: 1.5rem;
+}
+
+.bookInput {
+  outline: none;
+  width: 30%;
+  padding: 5px;
+  border: #aaa;
+}
+
+.bookAuthor {
+  outline: none;
+  width: 25%;
+  padding: 5px;
+  border: #aaa;
+}
+
+.bookCategories {
+  outline: none;
+  border: #aaa;
+  width: 25%;
+  color: #aaa;
+  padding: 5px;
+}
+
+.submitButton {
+  width: 15%;
+  padding: 5px;
+  border: none;
+  background: #0290ff;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.booktitle,
+.chapter {
+  font-size: 20px;
+  margin: 5px 0;
+  color: rgb(29, 28, 28);
+  font-weight: 600;
+}
+
+.category,
+.currentchapter {
+  font-size: 12px;
+  font-weight: 100;
+  color: rgb(34, 32, 32);
+}
+
+.completed {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.currentchapter {
+  color: #aaa;
+}
+
+.chapter {
+  color: #aaa;
+}
+
+.actionBtn {
+  justify-content: space-evenly;
+  color: #0290ff;
+  font-size: 13px;
+  font-weight: 200;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.addNewBook {
+  color: #888;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 10px auto;
+}
+
+.actionBtn li {
+  margin: 7px 7px 7px 0;
+}
+
+.updatebtn {
+  border: none;
+  background: #0290ff;
+  color: #fff;
+  border-radius: 3px;
+  width: 11.5rem;
+  height: 2.063rem;
+}
+
+.percentage {
+  font-size: 25px;
 }

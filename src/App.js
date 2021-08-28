@@ -9,7 +9,7 @@ import Books from './components/books';
     return (
       <Router>
           <Header/>
-          <div>
+          <div className="booklist-container">
           <Switch>
              <Route exact path="/">
              <Books />

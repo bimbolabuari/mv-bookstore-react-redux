@@ -1,10 +1,9 @@
 import * as actions from '../../actions/bookAction';
-// import { v4 as uuidv4 } from 'uuid';
-// BIaRoNTXarfAkaRwuuR5
+// 83QrMVYMDBrPlFBFHiHZ
 
 export const initialBooks = []
 
-const APIUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BIaRoNTXarfAkaRwuuR5/books';
+const APIUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/83QrMVYMDBrPlFBFHiHZ/books';
 
 const books =  (state = initialBooks, action) => {
   const {id, title, category} = action
@@ -15,6 +14,7 @@ const books =  (state = initialBooks, action) => {
             method: 'POST',
             body: JSON.stringify({
               item_id: id,
+              author: 'Abimbola',
               title: title,
               category: category
             }),
@@ -26,7 +26,7 @@ const books =  (state = initialBooks, action) => {
           });
           return state;
       case actions.BOOK_REMOVED:
-        fetch(`'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BIaRoNTXarfAkaRwuuR5/books/${id}'`, {
+        fetch(`'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/83QrMVYMDBrPlFBFHiHZ/books/${id}'`, {
           method: 'DELETE',
           body: JSON.stringify({
             item_id: id,
