@@ -26,25 +26,25 @@ const barstyle =  {
         
         <ul>
             { books.map(book => 
-                        <li className="booklist" key={book.id}>
+                        <li className="booklist flex" key={book.id}>
                 <div>
                     <p className="category">{book.category}</p>
                     <h2 className="booktitle">{book.title}</h2>
                     <h3 className="author">Abimbola</h3>
-                    <ul className="actionBtn">
+                    <ul className="actionBtn flex">
                         <li>Comment</li>
                         <li onClick={()=> removeBook(book.id)}>Remove</li>
                         <li>Edit</li>
                     </ul>
                     </div>
+                    <div className="flex">
+                    <div className="circle" />
                     <div>
-                    <p className="fpercentage">
+                    <p className="percentage">
                       {randomNum}
                       %
                     </p>
                     <p className="completed">Completed</p>
-                    <div className="progress progressBar">
-                      <div className="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-label="bar" style={barstyle} />
                     </div>
                   </div>
                     <div>

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <div className="header">
-          <div className="header-container">
+          <div className="header-container flex">
             <h1 className="title">BOOKSTORE CMS</h1>
             <nav>
-            <ul className="nav">
+            <ul className="nav flex">
               <li>
                 <Link className="link" to="/books">Books</Link>
               </li>

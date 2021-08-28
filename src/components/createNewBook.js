@@ -30,7 +30,7 @@ const CreateNewBook = ({addBook}) => {
         return (
         <div>
             <h2 className="addNewBook">Add new Book</h2>
-            <form className="form">
+            <form className="form flex">
                 <input type="text" className="bookInput" placeholder="Book title" value={title} onChange={handleTitleChange} required/>
                 <input type="text" placeholder="Book Author" className="bookAuthor" value={author} onChange={handleAuthorChange} required/>
                 <select  onChange={handleTypeChange} className="bookCategories">
