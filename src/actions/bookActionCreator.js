@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const addBook = ({title, category}) => ({
     type: actions.BOOK_ADDED,
     id: uuidv4(),
+  author: 'Abimbola',
    title,
    category
 })

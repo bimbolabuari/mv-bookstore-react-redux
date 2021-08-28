@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import { connect, useDispatch } from 'react-redux';
 import { removeBook, getBook } from '../actions/bookActionCreator';
 
+
 const DisplayBooks = (props) => {
 const {books, removeBook} = props
 
-
-
 const dispatch = useDispatch();
-const fetchApi = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BIaRoNTXarfAkaRwuuR5/books/';
+const fetchApi = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/83QrMVYMDBrPlFBFHiHZ/books/';
 useEffect(() => {
   const apiBooks = async () => {
     const fetchBook = await fetch(fetchApi);
@@ -19,27 +18,44 @@ useEffect(() => {
   apiBooks();
 }, []);
 
+const randomNum = Math.floor(Math.random() * 100)
+const barstyle =  {
+    width: `${randomNum}%`
+};
     return (
+        
         <ul>
-            { books.map(book => <li key={book.id}>
+            { books.map(book => 
+                        <li className="booklist" key={book.id}>
                 <div>
-                    <p>{book.category}</p>
-                    <h2>{book.title}</h2>
-                    <h3>{book.author}</h3>
-                </div>
-                    <ul>
+                    <p className="category">{book.category}</p>
+                    <h2 className="booktitle">{book.title}</h2>
+                    <h3 className="author">Abimbola</h3>
+                    <ul className="actionBtn">
                         <li>Comment</li>
                         <li onClick={()=> removeBook(book.id)}>Remove</li>
                         <li>Edit</li>
                     </ul>
-                    <div>
-                        <p>Completed</p>
                     </div>
                     <div>
-                        <p>Current Chapter</p>
-                        <button>Update Progress</button>
+                    <p className="fpercentage">
+                      {randomNum}
+                      %
+                    </p>
+                    <p className="completed">Completed</p>
+                    <div className="progress progressBar">
+                      <div className="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-label="bar" style={barstyle} />
                     </div>
-            </li>) }
+                  </div>
+                    <div>
+                        <p className="currentchapter">Current Chapter</p>
+                        <p className="chapter">
+                      Chapter&nbsp;
+                      {randomNum}
+                    </p>
+                        <button className="updatebtn">Update Progress</button>
+                    </div>
+            </li>)}
         </ul>
         )
 
